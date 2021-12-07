@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #036;
+            color: #a6b6c5;
+            padding: 5px 20px;
+            border-bottom: 2px solid #e02020;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        li.item a:hover {
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .menu li {
+            font-size: 16px;
+            padding: 10px 5px;
+        }
+
+        .menu li a {
+            display: block;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle {
+            order: 1;
+        }
+
+        .item {
+            width: 100%;
+            text-align: center;
+            order: 2;
+
+        }
+
+        .item.active {
+            display: block;
+        }
+
+        .toggle {
+            cursor: pointer;
+        }
+
+        /* 
+        ul.menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        } */
+
+
+
+        @media screen and (max-width:680px) {
+            ul.menu li:not(:first-child) {
+                display: none;
+            }
+
+            ul.menu li.toggle {
+                display: flex;
+                float: right;
+                color: white;
+                margin: 10px 50px 0px 0px;
+            }
+        }
+
+        @media screen and (max-width:680px) {
+            ul.menu.responsive {
+                position: relative;
+            }
+
+            ul.menu.responsive li.toggle {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            ul.menu.responsive li {
+                float: none;
+                display: inline;
+            }
+
+            ul.menu.responsive li a {
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+    <script>
+        function myFunction() {
+            document.getElementsByClassName("menu")[0].classList.toggle("responsive");
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo"><img src="svg-xml-base-(2).png"></li>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">World</a></li>
+            <li class="item"><a href="#">Us News</a></li>
+            <li class="item"><a href="#">Business</a></li>
+            <li class="item"><a href="#">Health</a></li>
+            <li class="item"><a href="#">Entertainment</a></li>
+            <li class="item"><a href="#">Sports</a></li>
+            <li class="item"><a href="#">Science</a></li>
+            <li class="item"><a href="#">Technology</a></li>
+            <li class="toggle"><span onclick="myFunction()">&#9776;</span></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
